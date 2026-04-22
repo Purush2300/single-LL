@@ -15,11 +15,35 @@ public class First {
         Node head=converttoll(a);
         Node temp=head;
         // lltraversal(temp);
-
+    head= removehead(head);
+    head=deletetail(head);
+   print(head);
         // System.out.println(countll(temp));
-        System.out.println(search(temp,5));
+        // System.out.println(search(temp,5));
 
 
+    }
+
+    private static Node  deletetail(Node head) {
+        if(head==null||head.next==null){
+            return null;
+        }
+        Node temp=head;
+        while(temp.next.next!=null){
+            temp=temp.next;
+        }
+        temp.next=null;
+
+
+        return head;
+    }
+
+    private static Node removehead(Node head) {
+     if(head==null){
+        return head;
+     }
+      head=head.next;
+      return head;
     }
 
     private static boolean search(Node temp, int i) {
@@ -45,9 +69,9 @@ public class First {
         
     }
 
-    private static void lltraversal(Node temp) {
+    private static void print(Node temp) {
        while (temp!=null) {
-        System.out.println(temp.data+" ");
+        System.out.print(temp.data+" ");
         temp=temp.next;
        }
     }
