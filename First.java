@@ -1,68 +1,70 @@
-class Listnode {
+class Node{
     int data;
-    Listnode next;
-    Listnode(int val){
+    Node next;
+    Node(int val){
         this.data=val;
         this.next=null;
     }
 }
 
 
-
-
-
 public class First {
 
-
-    
-
-
-
-
-
     public static void main(String[] args) {
-        int []a={11,2,3,4,5};
-        Listnode head=converttoll(a);
-        Listnode temp=head;
-      
-        // System.out.println(  search(temp,13));
-        System.out.println(length(head));
-        
-     
+        int[]a={10,2,3,4,5};
+        Node head=converttoll(a);
+        Node temp=head;
+        // lltraversal(temp);
+
+        // System.out.println(countll(temp));
+        System.out.println(search(temp,5));
+
+
     }
 
-    private static int length(Listnode head) {
+    private static boolean search(Node temp, int i) {
+            while (temp!=null) {
+                if(temp.data==i){
+                    return true;
+                }
+                temp=temp.next;
+            }
+
+
+        return false;
+        
+    }
+
+    private static int countll(Node temp) {
         int cnt=0;
-        Listnode temp=head;
         while (temp!=null) {
             cnt++;
             temp=temp.next;
         }
         return cnt;
+        
+    }
+
+    private static void lltraversal(Node temp) {
+       while (temp!=null) {
+        System.out.println(temp.data+" ");
+        temp=temp.next;
+       }
+    }
+
+    private static Node converttoll(int[] a) {
+        Node head=new Node(a[0]);
+        Node marker=head;
+       for (int i = 1; i < a.length; i++) {
+            Node temp=new Node(a[i]);
+            marker.next=temp;
+            marker=temp;
+       }
+
+       return head;
+
+
        
-    }
-
-    private static int search(Listnode temp, int i) {
-     while (temp!=null) {
-        if(temp.data==i){
-            return 1;
-        }
-           
-            temp=temp.next;
-        }
-     return 0;
-    }
-
-    private static Listnode converttoll(int[] a) {
-            Listnode head= new Listnode(a[0]);
-            Listnode marker=head;
-            for (int i = 1; i < a.length; i++) {
-                Listnode temp=new Listnode(a[i]);
-                marker.next=temp;
-                marker=temp;
-            }
-
-        return head;
-      
+        
     }
 }
