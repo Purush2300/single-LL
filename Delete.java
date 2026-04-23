@@ -16,14 +16,51 @@ public class Delete {
     //   head=last(head);
     //   head=position(head,3);
     // head=insertfirst(head,20);
+    head=insertposition(head,200,5);
 
-      head=insertend(head,20);
+    //   head=insertend(head,20);
         print(head);
     }
 
 
 
      
+
+
+
+
+
+
+      private static Node insertposition(Node head, int ele, int val) {
+        if(head==null){
+            return null;
+        }
+        if(head.data==val){
+            Node temp=new Node(ele);
+            temp.next=head;
+            return temp;
+        }
+
+       
+        Node temp=head;
+        while (temp!=null) {
+         
+            if(temp.next.data==val){
+                Node newnode = new Node(ele);
+                newnode.next=temp.next;
+                temp.next=newnode;
+                break;
+            }
+            temp=temp.next;
+        }
+        return head;
+
+
+    }
+
+
+
+
 
 
 
