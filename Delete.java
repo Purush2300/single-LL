@@ -15,7 +15,7 @@ public class Delete {
     //   head=first(head);
     //   head=last(head);
     //   head=position(head,3);
-    head=insertfirst(head,20);
+    // head=insertfirst(head,20);
 
       head=insertend(head,20);
         print(head);
