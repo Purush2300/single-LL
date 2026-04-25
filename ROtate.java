@@ -1,23 +1,32 @@
 public class ROtate {
     public static void main(String[] args) {
-        int[]a={7, 0, 0, 1, 7, 7, 2, 7, 7};
-        for (int i = 0; i < a.length; i++) {
-            int count=0;
-            for (int j = i; j < a.length; j++) {
-                if(a[i]==a[j]){
-                    count++;
+        int[][]a={{1,1,1},{1,0,1},{1,1,1}};
+        int r=a.length;
+        int col=a[0].length;
+        boolean[]r1=new boolean[r];
+        boolean[]c1=new boolean[col];
+        for (int i = 0; i < c1.length; i++) {
+           for (int j = 0; j < c1.length; j++) {
+            if(a[i][j]==0){
+                r1[i]=true;
+                c1[j]=true;
+
+            }
+           }
+        }
+        for (int i = 0; i < c1.length; i++) {
+            for (int j = 0; j < c1.length; j++) {
+                if(r1[i]||c1[j]==true){
+                    a[i][j]=0;
                 }
             }
-            if(count>a.length/2){
-                System.out.println(a[i]);
-                return;
-            }
         }
-        
-        
-
-        System.out.println(-1);
-      
-        
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+       
     }
 }
