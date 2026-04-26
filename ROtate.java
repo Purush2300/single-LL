@@ -1,32 +1,38 @@
 public class ROtate {
     public static void main(String[] args) {
-        int[][]a={{1,1,1},{1,0,1},{1,1,1}};
+        int[][]a={{1,2,3},{4,5,6},{7,8,9}};
         int r=a.length;
-        int col=a[0].length;
-        boolean[]r1=new boolean[r];
-        boolean[]c1=new boolean[col];
-        for (int i = 0; i < c1.length; i++) {
-           for (int j = 0; j < c1.length; j++) {
-            if(a[i][j]==0){
-                r1[i]=true;
-                c1[j]=true;
-
-            }
-           }
-        }
-        for (int i = 0; i < c1.length; i++) {
-            for (int j = 0; j < c1.length; j++) {
-                if(r1[i]||c1[j]==true){
-                    a[i][j]=0;
+        int c=a[0].length;
+        int []ans1=new int[r*c];
+        int k=0;
+       int top=0;
+       int bottom=r-1;
+       int left=0;
+       int right=c-1;
+       while (left<=right && top<=bottom) {
+        for (int i = left; i <= right; i++) {
+            ans1[k++]=a[top][i];
+       }
+       top++;
+       for (int i = top; i <=bottom; i++) {
+        ans1[k++]=a[i][right];
+       }
+       right--;
+       if(top<=bottom){
+                for (int i = right; i >=left; i--) {
+                ans1[k++]=a[bottom][i];
                 }
-            }
-        }
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < col; j++) {
-                System.out.print(a[i][j]+" ");
-            }
-            System.out.println();
-        }
-       
+                bottom--;
+       }
+     if(left<=right){
+                for (int i = bottom; i >=top; i--) {
+                ans1[k++]=a[i][left];
+                }
+                left++;
+     }
+       }
+       for (int i = 0; i < ans1.length; i++) {
+        System.out.print(ans1[i]+" ");
+       }
     }
 }
