@@ -1,6 +1,6 @@
 public class new1 {
     public static void main(String[] args) {
-        String a="aab";
+        String a="baab";
         String p="";
         for (int i = 0; i < a.length(); i++) {
          
