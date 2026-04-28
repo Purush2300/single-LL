@@ -15,7 +15,7 @@ class Node{
 
 public class Leet {
     public static void main(String[] args) {
-        int []arr={1,2,3,4,5};
+        int []arr={1,2};
         Node head= toLL(arr);
         // head=middle(head);
         head=reverse(head);
