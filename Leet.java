@@ -17,8 +17,61 @@ public class Leet {
     public static void main(String[] args) {
         int []arr={1,2,3,4,5};
         Node head= toLL(arr);
-        head=middle(head);
+        // head=middle(head);
+        head=reverse(head);
         tprint(head);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private static Node reverse(Node head) {
+        if(head==null){
+            return null;
+        }
+        Node temp=head;
+        Node prev=null;
+        while(temp!=null){
+            Node front=temp.next;
+            temp.next=prev;
+            prev=temp;
+            temp=front;
+        }
+        
+
+
+       return prev;
     }
 
 
@@ -124,8 +177,17 @@ public class Leet {
       while(temp!=null){
         System.out.print(temp.data+" ");
       
-      temp=temp.next;}
+      temp=temp.next;
     }
+    }
+
+
+
+
+
+
+
+
 
     private static Node toLL(int[] arr) {
     Node head = new Node(arr[0]);
