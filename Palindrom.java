@@ -16,13 +16,34 @@ class Node{
 
 public class Palindrom {
     public static void main(String[] args) {
-        int[]k={1,2,3,4,5};
+        int[]k={1,2,3,2,1};
         Node head=twoll(k);
-        display(head);
-        System.out.println();
-        head=reve(head);
-        display(head);
-       
+      System.out.println(ispalindrom(head));
+    }
+
+    private static boolean ispalindrom(Node head) {
+        if (head == null || head.next == null)
+         return true;
+       Node slow=head;
+       Node fast=head;
+       while (fast.next!=null && fast.next.next!=null) {
+        slow=slow.next;
+        fast=fast.next.next;
+       }
+       Node secondhalf=reve(slow.next);
+
+    Node first=head;
+    Node second=secondhalf;
+       while (second!=null) {
+        if(first.data!=second.data){
+            reve(secondhalf);
+            return false;
+        }
+        first=first.next;
+        second=second.next;
+       }
+       reve(secondhalf);
+       return true;
     }
 
     private static Node reve(Node head) {
