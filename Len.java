@@ -1,6 +1,6 @@
 public class Len {
     public static void main(String[] args) {
-       String s="(()((()(())()))()())";
+       String s="()";
        int depth=0;
        StringBuilder sb= new StringBuilder();
        for (char c : s.toCharArray()) {
