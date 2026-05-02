@@ -1,7 +1,7 @@
 public class Merge {
     public static void main(String[] args) {
         int []a1 = {4,5,6};
-        int []a2 = {1,2,3,4};
+        int []a2 = {1,2,3,};
         int i=0;
         int j=0;
         int []result = new int[a1.length+a2.length];
