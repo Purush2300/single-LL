@@ -10,7 +10,7 @@ class Node{
 
 public class Delete {
     public static void main(String[] args) {
-        int[]a={10,2,3,4,5};
+        int[]a={1};
         Node head=converttoll(a);
     //   head=first(head);
     //   head=last(head);
