@@ -13,7 +13,7 @@ class Node{
 }
 public class ROtate {
     public static void main(String[] args) {
-      int[]a={10,30,40,50};
+      int[]a={10,100,30,40,50};
       Node head=convert2ll(a);
     //   head=first(head);
     //   head=del(head);
