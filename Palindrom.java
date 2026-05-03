@@ -16,7 +16,7 @@ class Node{
 
 public class Palindrom {
     public static void main(String[] args) {
-        int[]k={1,2,3,2,1};
+        int[]k={1,2,3,1};
         Node head=twoll(k);
       System.out.println(ispalindrom(head));
     }
