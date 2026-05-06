@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Problemy {
     public static void main(String[] args) {
-        String s="greeks";
+        String s="grees";
         System.out.println(palindrom(s));
       
      
