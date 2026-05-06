@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Problemx {
     public static void main(String[] args) {
-        String s="jpmztf";
+        String s="gfuyg";
        int cnt=0;
         for (int i = 0; i <s.length(); i++) {
             char c=s.charAt(i);
