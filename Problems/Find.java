@@ -1,19 +1,23 @@
 package  Problems;
 
+import java.util.Arrays;
+
 public class Find {
     public static void main(String[] args) {
-        String s="..greeks.for..greek";
-        String[]words=s.split("\\.+",-1);
-        StringBuilder sb=new StringBuilder();
-       for (int i = words.length-1; i >=0; i--) {
-        if(words[i].length()>0){
-            if(sb.length()>0){
-                sb.append(".");
-            }
-            sb.append(words[i]);
-        }
-       }
+        String s1="geeks";
+        String s2="kseeg";
+        char[]a=s1.toCharArray();
+        Arrays.sort(a);
+        char[]b=s2.toCharArray();
+         Arrays.sort(b);
 
-       System.out.println(sb.toString());
+        if(Arrays.equals(a, b)){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+
+
     }
 }
