@@ -1,6 +1,6 @@
 public class KOd {
     public static void main(String[] args) {
-        String s = "good morning";
+        String s = "good mrning";
         String result="";
        String []a=s.split(" ");
        for (String string : a) {
