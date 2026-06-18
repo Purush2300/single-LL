@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 class Node{
     int data;
     Node next;
@@ -24,7 +16,7 @@ class Node{
 
 public class June17 {
     public static void main(String[] args) {
-        int[]arr={1,2,3,4,5,6};
+        int[]arr={14,23,34,4,5,6};
         
        Node head=converttoll(arr);
        System.err.println(head.data);
