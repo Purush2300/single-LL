@@ -23,8 +23,8 @@ public class June19 {
         Node head=toSinglell(arr);
     
         //    delete tail
-        // head=deleteOfHead(head);
-        //   print(head);
+        head=deleteOfHead(head);
+          print(head);
 
         // // delete tail
         // head=deleteTail(head);
@@ -40,8 +40,17 @@ public class June19 {
         // print(head);
 
         // insert head at begining
-        head=new Node(100,head);
-         print(head);
+        // head=new Node(100,head);
+        //  print(head);
+        
+        //inser at paticular position
+        
+        // head=insertAtPosition(head,200,2);
+        // print(head);
+
+        // insert before value
+        head=insertBeforeValue(head,50,300);
+        print(head);
     }
 
     private static Node toSinglell(int[] arr) {
@@ -114,6 +123,52 @@ public class June19 {
                 prev.next=prev.next.next;
             }
             prev=temp;
+            temp=temp.next;
+        }
+        return head;
+    }
+
+    private static Node insertAtPosition(Node head, int value, int position) {
+       if(head==null){
+        if(position==1){
+            return new Node(value);
+        }
+        else{
+            return null;
+        }
+       }
+
+       if(position==1){
+        Node temp =new Node(value,head);
+        return temp;
+       }
+       Node temp=head;
+       int cnt=0;
+       while(temp!=null){
+        cnt++;
+        if(cnt==position-1){
+            Node newNode=new Node(value);
+            newNode.next=temp.next;
+            temp.next=newNode;
+        }
+        temp=temp.next;
+       }
+       return  head;
+    }
+
+    private static Node insertBeforeValue(Node head, int i,int value) {
+        if(head.data==i){
+        return new Node(value,head);
+           
+        }
+        Node temp=head;
+        while(temp.next!=null){
+            if(temp.next.data==i){
+                Node z=new Node(value);
+                z.next=temp.next;
+                temp.next=z;
+                break;
+            }
             temp=temp.next;
         }
         return head;
