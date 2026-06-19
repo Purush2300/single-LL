@@ -40,8 +40,8 @@ public class June19 {
         // print(head);
 
         // insert head at begining
-        // head=new Node(100,head);
-        //  print(head);
+        head=new Node(100,head);
+         print(head);
         
         //inser at paticular position
         
